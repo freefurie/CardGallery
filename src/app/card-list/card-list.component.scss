@@ -1,0 +1,21 @@
+.search-block {
+  background: #fff;
+  display: inline-block;
+
+  .search-control {
+    font-size: 1rem;
+    border: 0;
+    outline: none;
+    padding-left: 10px;
+  }
+}
+
+.md-fab-bottom-right {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+
+.centered {
+  margin: 16px;
+}

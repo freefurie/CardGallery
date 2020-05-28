@@ -13,6 +13,11 @@
       <button class="search-icon" mat-icon-button disabled>
         <mat-icon>search</mat-icon>
       </button>
+      <input class="search-control" type="text" [(ngModel)]="searchText" placeholder="Search" #searchbar />
+      <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear"
+        (click)="searchText = ''; applyFilter()">
+        <mat-icon>close</mat-icon>
+      </button>
     </div>
   </div>
 

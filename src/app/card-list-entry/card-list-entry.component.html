@@ -1,1 +1,22 @@
-<p>card-list-entry works!</p>
+<mat-card fxLayout="column" fxFlexFill fxLayoutAlign="start stretch" style="cursor: pointer;">
+  <div gdAreas="image image | tags tags | title content" gdGap="16px" gdRows="auto auto auto">
+    <div gdArea="image" class="image">
+      <img mat-card-image [src]="data?.image" alt="card image" />
+    </div>
+    <div gdArea="tags">
+      <mat-chip-list>
+        <mat-chip *ngFor="let tag of data?.tags">{{ tag }}</mat-chip>
+      </mat-chip-list>
+    </div>
+    <div gdArea="title">
+      <mat-card-title>
+        {{ data?.name }}
+      </mat-card-title>
+    </div>
+    <div gdArea="content" fxLayout="column" fxLayoutAlign="end end">
+      <mat-card-subtitle>
+        {{ data?.description }}
+      </mat-card-subtitle>
+    </div>
+  </div>
+</mat-card>

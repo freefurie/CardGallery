@@ -1,8 +1,28 @@
 <div class="centered" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="16px">
+  <!-- title -->
   <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex>
     <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
       <mat-icon>crop_original</mat-icon>
-      <p>Cards</p>
+      <div>Cards</div>
     </mat-card-title>
   </mat-card>
+
+  <!-- search -->
+  <div fxLayout="row" fxLayoutGap="16px">
+    <div class="search-block" mat-elevation-z4>
+      <button class="search-icon" mat-icon-button disabled>
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- tags -->
+
+  <!-- cards -->
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayout.lt-sm="column" fxLayoutAlign="start stretch"
+    fxLayoutGap="16px grid" fxLayoutGap.xs="16px" *ngIf="cardList">
+    <app-card-list-entry *ngFor="let card of cardList" [routerLink]="['/list/summary/' + card.id]" [data]="card"
+      fxFlex.xl="15" fxFlex.lg="20" fxFlex.md="33.33" fxFlex.sm="50" fxFlex.xs="100">
+    </app-card-list-entry>
+  </div>
 </div>

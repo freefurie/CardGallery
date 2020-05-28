@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestClientService } from '../rest-client.service';
 
 @Component({
   selector: 'app-card-list',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit {
+  cardList = []
 
-  constructor() { }
+  constructor(private rest: RestClientService) { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
+  ngAfterContentInit () {
+    this.loadData();
+  }
+
+  loadData () {
+    this.rest.getCards().subscribe((x) => {
+      this.cardList = x;
+    })
+  }
 }

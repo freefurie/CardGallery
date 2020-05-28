@@ -1,0 +1,15 @@
+<div fxLayout="column" fxFlex="35" fxLayoutAlign="start center">
+  <div style="margin: 8px;" fxLayout="row" fxLayoutAlign="start start">
+    <img fxFlex="100" [src]="card?.image" alt="card image" />
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-title style="margin: 8px;">{{ card?.name }}</mat-card-title>
+    <mat-card-subtitle style="margin: 8px;">{{ card?.description }}</mat-card-subtitle>
+    <mat-chip-list style="margin: 8px;">
+      <mat-chip *ngFor="let tag of card?.tags">{{ tag }}</mat-chip>
+    </mat-chip-list>
+  </div>
+</div>
+<div fxLayout="column" fxFlex fxLayoutAlign="start stretch">
+  <app-card-comment *ngFor="let comment of card?.comments" [data]="comment"></app-card-comment>
+</div>

@@ -7,13 +7,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { CardListEntryComponent } from './card-list-entry/card-list-entry.component';
+import { CardSummaryComponent } from './card-summary/card-summary.component';
+import { CardCommentComponent } from './card-comment/card-comment.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,9 @@ import { CardListEntryComponent } from './card-list-entry/card-list-entry.compon
     NavigationBarComponent,
     HomeComponent,
     CardListComponent,
-    CardListEntryComponent
+    CardListEntryComponent,
+    CardSummaryComponent,
+    CardCommentComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,10 @@ import { CardListEntryComponent } from './card-list-entry/card-list-entry.compon
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    MatChipsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

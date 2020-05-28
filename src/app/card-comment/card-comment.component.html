@@ -1,0 +1,17 @@
+<div style="margin: 8px;" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxFlexFill fxLayoutAlign="start stretch">
+    <div fxLayout="row" fxLayoutAlign="center stretch">
+      <div fxLayout="column" fxFlex fxLayoutAlign="start center">
+        <mat-card-title>
+          {{ data.name }}
+        </mat-card-title>
+      </div>
+      <mat-divider [vertical]="true"></mat-divider>
+      <div style="margin: 0px 8px;" fxLayout="column" fxFlex="70" fxLayoutAlign="start start">
+        <mat-card-content>
+          {{ data.text }}
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+</div>

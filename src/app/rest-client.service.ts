@@ -19,4 +19,8 @@ export class RestClientService {
   getCard (id: number) {
     return this.http.get<any>(environment.apiUrl + '/cards/' + id).pipe();
   }
+
+  postComment (id: number, data) {
+    return this.http.post<any>(environment.apiUrl + '/cards/' + id + '/comments', data).pipe();
+  }
 }

@@ -12,6 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
@@ -20,6 +24,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { CardListEntryComponent } from './card-list-entry/card-list-entry.component';
 import { CardSummaryComponent } from './card-summary/card-summary.component';
 import { CardCommentComponent } from './card-comment/card-comment.component';
+import { CommentDialogComponent } from './comment-dialog/comment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,8 @@ import { CardCommentComponent } from './card-comment/card-comment.component';
     CardListComponent,
     CardListEntryComponent,
     CardSummaryComponent,
-    CardCommentComponent
+    CardCommentComponent,
+    CommentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,11 @@ import { CardCommentComponent } from './card-comment/card-comment.component';
     HttpClientModule,
     MatChipsModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

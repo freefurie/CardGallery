@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestClientService } from '../rest-client.service';
 import { take, map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { CommentDialogComponent } from '../comment-dialog/comment-dialog.component';
 
 @Component({
   selector: 'app-card-summary',
@@ -10,9 +12,10 @@ import { take, map } from 'rxjs/operators';
 })
 export class CardSummaryComponent implements OnInit {
   cardId;
-  card
+  card;
+  commentDialogSub;
 
-  constructor(private route: ActivatedRoute, private rest: RestClientService) { }
+  constructor(private route: ActivatedRoute, private rest: RestClientService, private dialog: MatDialog) { }
 
   ngOnInit (): void {
     this.route.paramMap.pipe(map(x => x), take(1)).subscribe((params) => {
@@ -27,4 +30,9 @@ export class CardSummaryComponent implements OnInit {
     });
   }
 
+  commentDialog () {
+    this.commentDialogSub = this.dialog.open(CommentDialogComponent).afterClosed().subscribe(
+      data => this.rest.postComment(this.cardId, data).subscribe()
+    );
+  }
 }

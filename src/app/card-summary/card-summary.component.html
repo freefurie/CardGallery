@@ -9,6 +9,7 @@
       <mat-chip *ngFor="let tag of card?.tags">{{ tag }}</mat-chip>
     </mat-chip-list>
   </div>
+  <button mat-raised-button (click)="commentDialog()">Comment</button>
 </div>
 <div fxLayout="column" fxFlex fxLayoutAlign="start stretch">
   <app-card-comment *ngFor="let comment of card?.comments" [data]="comment"></app-card-comment>

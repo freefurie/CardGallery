@@ -1,0 +1,22 @@
+<h1>
+  Add a comment
+</h1>
+
+<form [formGroup]="commentForm" (ngSubmit)="submit()">
+  <mat-form-field>
+    <input type="text" matInput placeholder="Name" formControlName="commentName" />
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Comment" formControlName="commentBody" required />
+    <mat-error *ngIf="commentBody.errors?.required">
+      "A comment is required!"
+    </mat-error>
+  </mat-form-field>
+
+  <button type="button" mat-button color="warn" (click)="onCancel()">
+    Cancel
+  </button>
+  <button type="submit" mat-button color="primary">
+    Submit
+  </button>
+</form>

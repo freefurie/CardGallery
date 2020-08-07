@@ -29,11 +29,13 @@ export class CardListComponent implements OnInit {
   loadData (filter) {
     this.rest.getCards().subscribe((x) => {
       this.cardList.length = 0;
+      console.log(x);
       x.forEach(element => {
+        console.log(element);
         if (element.name.toLowerCase().includes(filter.toLowerCase())) {
           this.cardList.push(element);
         }
-      });
+      })
     })
   }
 

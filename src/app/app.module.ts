@@ -25,6 +25,12 @@ import { CardListEntryComponent } from './card-list-entry/card-list-entry.compon
 import { CardSummaryComponent } from './card-summary/card-summary.component';
 import { CardCommentComponent } from './card-comment/card-comment.component';
 import { CommentDialogComponent } from './comment-dialog/comment-dialog.component';
+import { LoginComponent } from './login/login.component';
+import { CardOverviewComponent } from './card-overview/card-overview.component';
+import { CardCreateComponent } from './login/card-dialogs/card-create/card-create.component';
+import { CardEditComponent } from './login/card-dialogs/card-edit/card-edit.component';
+import { CardDeleteComponent } from './login/card-dialogs/card-delete/card-delete.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,12 @@ import { CommentDialogComponent } from './comment-dialog/comment-dialog.componen
     CardListEntryComponent,
     CardSummaryComponent,
     CardCommentComponent,
-    CommentDialogComponent
+    CommentDialogComponent,
+    LoginComponent,
+    CardOverviewComponent,
+    CardCreateComponent,
+    CardEditComponent,
+    CardDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,8 @@ import { CommentDialogComponent } from './comment-dialog/comment-dialog.componen
     MatDialogModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

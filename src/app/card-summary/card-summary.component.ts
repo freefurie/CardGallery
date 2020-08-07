@@ -30,9 +30,9 @@ export class CardSummaryComponent implements OnInit {
     });
   }
 
-  commentDialog () {
+  /*commentDialog () {
     this.commentDialogSub = this.dialog.open(CommentDialogComponent).afterClosed().subscribe(
       data => this.rest.postComment(this.cardId, data).subscribe()
     );
-  }
+  }*/
 }

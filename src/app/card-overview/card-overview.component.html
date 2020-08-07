@@ -1,0 +1,29 @@
+<div style="margin: 8px;" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxFlexFill fxLayoutAlign="start stretch">
+        <div fxLayout="row" fxLayoutAlign="center stretch">
+            <div fxLayout="column" fxFlex fxLayoutAlign="center center">
+                <img style="max-height: 150px; border-radius: 8px;" [src]="data.image" alt="cardpic" />
+            </div>
+            <div fxLayout="column" fxFlex="20" fxLayoutAlign="center center">
+                <mat-card-title>
+                    {{ data.name }}
+                </mat-card-title>
+            </div>
+            <div fxLayout="column" fxFlex="60" fxLayoutAlign="center center">
+                <mat-card-content>
+                    {{ data.description }}
+                </mat-card-content>
+            </div>
+            <div fxLayout="column" style="margin: 8px;" fxLayoutAlign="center center">
+                <button mat-mini-fab color="primary" (click)="editCard()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+            <div fxLayout="column" style="margin: 8px;" fxLayoutAlign="center center">
+                <button mat-mini-fab color="warn" (click)="deleteCard()">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,26 @@
+<!-- login -->
+<form [formGroup]="form" *ngIf="!logged">
+    <fieldset>
+        <legend>Login</legend>
+        <div class="form-field">
+            <label>Email:</label>
+            <input name="email" formControlName="email">
+        </div>
+        <div class="form-field">
+            <label>Password:</label>
+            <input name="password" formControlName="password" type="password">
+        </div>
+    </fieldset>
+    <div class="form-buttons">
+        <button class="button button-primary" (click)="login()">Login</button>
+    </div>
+</form>
+
+<div *ngIf="logged">
+    <div fxLayout="column" fxLayoutAlign="space-around stretch" *ngIf="cardList">
+        <app-card-overview *ngFor="let card of cardList" [data]="card" (edit)="editCard($event)" (delete)="deleteCard($event)"></app-card-overview>
+    </div>
+    <button mat-fab class="md-fab md-fab-bottom-right" (click)="addCard()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

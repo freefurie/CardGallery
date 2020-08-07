@@ -1,0 +1,33 @@
+<mat-card-title>Add a Card</mat-card-title>
+<mat-card-content>
+    <form [formGroup]="newCardForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Name" formControlName="name"
+                required />
+            <mat-error *ngIf="name.errors?.required">
+                A name is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Description"
+                formControlName="description" required />
+            <mat-error *ngIf="description.errors?.required">
+                A description is required!
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Image" formControlName="image" required />
+            <mat-error *ngIf="image.errors?.required">
+                An image url is required!
+            </mat-error>
+        </mat-form-field>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()" color="warn">
+                Cancel
+            </button>
+            <button type="submit" mat-button color="primary">
+                Add Card
+            </button>
+        </div>
+    </form>
+</mat-card-content>
